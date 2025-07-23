@@ -1,23 +1,21 @@
-from commands import ClubListCmd
-from screens import ClubCreate, ClubView, MainMenu, PlayerEdit, PlayerView
+from commands import TournamentListCmd
+from screens import TournamentCreate, TournamentView, TournamentMenu, TournamentEdit
 
 
 class App:
     """The main controller for the club management program"""
 
     SCREENS = {
-        "main-menu": MainMenu,
-        "club-create": ClubCreate,
-        "club-view": ClubView,
-        "player-view": PlayerView,
-        "player-edit": PlayerEdit,
-        "player-create": PlayerEdit,
+        "main-menu": TournamentMenu,
+        "tournament-view": TournamentView,
+        "tournament-edit": TournamentEdit,
+        "tournament-create": TournamentEdit,
         "exit": False,
     }
 
     def __init__(self):
         # We start with the list of clubs (= main menu)
-        command = ClubListCmd()
+        command = TournamentListCmd()
         self.context = command()
 
     def run(self):
