@@ -1,13 +1,13 @@
-from commands import PlayerUpdateCmd
+from commands import TournamentUpdateCmd
 
 from ..base_screen import BaseScreen
 
 
-class PlayerEdit(BaseScreen):
+class TournamentEdit(BaseScreen):
     """Screen displayed when editing a player (creating or changing an existing one)"""
 
-    def __init__(self, club, player=None):
-        self.club = club
+    def __init__(self, tournament, player=None):
+        self.tournament = tournament
         self.player = player
 
     def get_command(self):
@@ -27,4 +27,4 @@ class PlayerEdit(BaseScreen):
 
             data[key] = func(**kwargs)
 
-        return PlayerUpdateCmd(self.club, self.player, **data)
+        return PlayerUpdateCmd(self.tournament, self.player, **data)

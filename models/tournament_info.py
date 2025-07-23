@@ -2,13 +2,13 @@ from datetime import datetime
 
 
 class Tournament:
-    """The player class holds all information related to a player"""
+    """The tournament class holds all information related to a tournament"""
 
     DATE_FORMAT = "%d-%m-%Y"
 
     def __init__(self, name, email, chess_id, birthday):
         if not name:
-            raise ValueError("Player name is required!")
+            raise ValueError("Tournament name is required!")
 
         self.name = name
         self.email = email
@@ -53,6 +53,6 @@ class Tournament:
 
         data = {attr: getattr(self, attr) for attr in ("name", "email", "chess_id")}
         # We make sure to use the str representation of the date
-        # datetime is notnatively serializable in JSON
+        # datetime is not natively serializable in JSON
         data["birthday"] = self.birthday
         return data

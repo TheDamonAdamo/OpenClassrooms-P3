@@ -3,13 +3,13 @@ from screens import TournamentCreate, TournamentView, TournamentMenu, Tournament
 
 
 class App:
-    """The main controller for the club management program"""
+    """The main controller for the tournament management program"""
 
     SCREENS = {
-        "main-menu": TournamentMenu,
+        "tourny-menu": TournamentMenu,
         "tournament-view": TournamentView,
         "tournament-edit": TournamentEdit,
-        "tournament-create": TournamentEdit,
+        "tournament-create": TournamentCreate,
         "exit": False,
     }
 
