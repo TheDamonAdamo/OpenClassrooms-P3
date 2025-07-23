@@ -1,18 +1,18 @@
-from commands import ClubListCmd, NoopCmd
+from commands import TournamentListCmd, NoopCmd
 
 from ..base_screen import BaseScreen
 
 
-class ClubView(BaseScreen):
-    """Screen displayed when viewing a club"""
+class TournamentView(BaseScreen):
+    """Screen displayed when viewing a tournament"""
 
-    def __init__(self, club):
-        self.club = club
+    def __init__(self, tournament):
+        self.tournament = tournament
 
     def display(self):
-        """Displays the club name and a list of players in the club (with numbers)"""
-        print("##", self.club.name)
-        for idx, p in enumerate(self.club.players, 1):
+        """Displays the tournament name and a list of players in the tournament (with numbers)"""
+        print("##", self.tournament.name)
+        for idx, p in enumerate(self.tournament.players, 1):
             print(idx, p.name, p.email)
 
     def get_command(self):
@@ -22,11 +22,11 @@ class ClubView(BaseScreen):
             print("Type 'B' to go back to main menu.")
             value = self.input_string()
             if value.upper() == "B":
-                return ClubListCmd()
+                return tournamentListCmd()
             elif value.upper() == "C":
-                return NoopCmd("player-create", club=self.club)
+                return NoopCmd("player-create", tournament=self.tournament)
             elif value.isdigit():
                 value = int(value)
                 return NoopCmd(
-                    "player-view", club=self.club, player=self.club.players[value - 1]
+                    "player-view", tournament=self.tournament, player=self.tournament.players[value - 1]
                 )

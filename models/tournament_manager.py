@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from .club import ChessClub
+from .tournament import ChessTournament
 
 
 class TournamentManager:
