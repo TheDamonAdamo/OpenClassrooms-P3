@@ -5,7 +5,7 @@ from .base import BaseCommand
 
 
 class TournamentListCmd(BaseCommand):
-    """Command to get the list of clubs"""
+    """Command to get the list of tournaments"""
 
     def execute(self):
         tm = TournamentManager()
