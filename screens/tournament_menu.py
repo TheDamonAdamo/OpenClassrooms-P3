@@ -4,7 +4,7 @@ from .base_screen import BaseScreen
 
 
 class TournamentMenu(BaseScreen):
-    """Main menu screen"""
+    """Tournament menu screen"""
 
     def __init__(self, tournaments):
         self.tournaments = tournaments

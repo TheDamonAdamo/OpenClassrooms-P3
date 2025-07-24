@@ -6,7 +6,7 @@ class App:
     """The main controller for the tournament management program"""
 
     SCREENS = {
-        "tourny-menu": TournamentMenu,
+        "tournament-menu": TournamentMenu,
         "tournament-view": TournamentView,
         "tournament-edit": TournamentEdit,
         "tournament-create": TournamentCreate,
