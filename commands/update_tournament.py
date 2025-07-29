@@ -6,7 +6,7 @@ from .base import BaseCommand
 class TournamentUpdateCmd(BaseCommand):
     """Command to update a player"""
 
-    def __init__(self, club, player, **data):
+    def __init__(self, tournament, player, **data):
         self.tournament = tournament
         self.player = player
         self.data = data

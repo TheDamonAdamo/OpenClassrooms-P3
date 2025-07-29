@@ -27,7 +27,7 @@ class ChessTournament:
                 data = json.load(fp)
                 self.name = data["name"]
                 self.tournaments = [
-                    Tournament(**tournament_dict) for tournament_dict in data["tournaments"]
+                    Tournament(**tournament_dict) for tournament_dict in data["name"]
                 ]
         elif not filepath:
             # We did not have a file, so we are going to create it by running the save method

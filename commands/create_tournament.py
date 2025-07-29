@@ -1,5 +1,5 @@
 from commands.context import Context
-from models import ClubManager
+from models import TournamentManager
 
 from .base import BaseCommand
 
@@ -11,7 +11,7 @@ class TournamentCreateCmd(BaseCommand):
         self.name = name
 
     def execute(self):
-        """Uses a TournamentManager instance to create the club and add it to the list of torunaments"""
+        """Uses a TournamentManager instance to create the club and add it to the list of tournaments"""
         tm = TournamentManager()
         tournament = tm.create(self.name)
         return Context("tournament-view", tournament=tournament)
