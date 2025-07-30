@@ -11,7 +11,7 @@ class ClubView(BaseScreen):
 
     def display(self):
         """Displays the club name and a list of players in the club (with numbers)"""
-        print("##", self.club.name)
+        print("##", self.club.name, "\nClub Player: ", self.club.players)
         for idx, p in enumerate(self.club.players, 1):
             print(idx, p.name, p.email)
 

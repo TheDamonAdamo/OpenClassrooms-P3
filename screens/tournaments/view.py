@@ -11,9 +11,10 @@ class TournamentView(BaseScreen):
 
     def display(self):
         """Displays the tournament name and a list of players in the tournament (with numbers)"""
-        print("##", self.tournament.name)
+        print("##", self.tournament.name, "\nCompleted: ", self.tournament.comp)
         for idx, p in enumerate(self.tournament.players, 1):
-            print(idx, p.name, p.email)
+            print(idx, p.players)
+            #print(idx, p.rounds)
 
     def get_command(self):
         """Gets the command for this screen"""
@@ -22,7 +23,7 @@ class TournamentView(BaseScreen):
             print("Type 'B' to go back to main menu.")
             value = self.input_string()
             if value.upper() == "B":
-                return tournamentListCmd()
+                return TournamentListCmd()
             elif value.upper() == "C":
                 return NoopCmd("player-create", tournament=self.tournament)
             elif value.isdigit():
